@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"> 
+
+ <bean id="ParentClass" class="PojoBeanInheritanceCollection" abstract="true">
+	  <property name="cordinates" >
+	  		<list>
+	  				<ref bean="point"/>
+	  	
+	  
+	  		</list>
+	  </property>
+</bean>
+
+<bean id="child1" class="PojoBeanInheritanceCollection" parent="ParentClass">
+<property name="cordinates" >
+	  		<list merge="true">
+	  				<ref bean="pointB"/>
+	  	
+	  
+	  		</list>
+	  </property>
+
+
+</bean>
+
+
+  
+		<bean id="point" class="PojoBeanInheitance">
+			<property name="x" value="100"/>
+			<property name="y" value="110"/>
+			<property name="z" value="120"/>
+		</bean>		
+
+
+		<bean id="pointB" class="PojoBeanInheitance">
+			<property name="x" value="200"/>
+			<property name="y" value="210"/>
+			<property name="z" value="220"/>
+		</bean>		
+ 
+</beans>

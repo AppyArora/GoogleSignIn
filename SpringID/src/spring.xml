@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"> 
+
+<!--
+this for the simple constructor injection
+
+  <bean id="firstbean" class="PojoSpring">
+<property name="name" value="SPRING"></property>
+<constructor-arg  type="float" value="1"></constructor-arg> 
+ -->
+<!-- <constructor-arg index="1"  value ="1"></constructor-arg>
+ <constructor-arg index="0"  value="arpit"></constructor-arg>
+ --> 
+ 
+  <bean id="firstbean" class="PojoSpring" name="firstbeanAlias">
+		<property name ="pointClassA" ref="Point1"/>
+		
+		<property name ="pointClassB">
+			<bean  class="PointClass">
+				<property name ="x" value="10"/>
+				<property name ="y" value="10"/>
+			</bean>
+		
+		</property>
+		
+			<property name ="pointClassC">
+		  		<bean class="PointClass">
+		    		 <property name ="x" value="30"/>
+				 	<property name ="y" value="30"/>
+		 		</bean>
+			</property>
+ </bean>
+
+		<bean id="Point1" class="PointClass">
+					<property name ="x" value="20"/>
+					<property name ="y" value="20"/>
+	 	</bean>
+
+<alias name="firstbean" alias="firstbeanAlias"/>
+
+</beans>

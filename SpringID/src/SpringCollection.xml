@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"> 
+
+  <bean id="firstbean" class="CollectionInjection" name="firstbeanAlias" >
+		<property name ="point" >
+			<list>
+					<ref bean="Point1"/>
+					<ref bean="Point2"/>
+					<ref bean="Point3"/>
+			</list>
+		</property>
+		
+		
+	<property name="abc">
+			<list>
+		<value >abc</value>
+		<value >abcd</value>
+		
+		
+	</list>
+	</property>
+ 
+ </bean>
+ <!-- 
+<bean class="PersonBean">
+			<property name="name" value="mkyongList" />
+			<property name="address" value="address" />
+			<property name="age" value="28" />
+		</bean> -->
+	<bean id="Point2" class="PointClass">
+				<property name ="x" value="10"/>
+				<property name ="y" value="10"/>
+			</bean>
+		
+		<bean id="Point1" class="PointClass">
+					<property name ="x" value="20"/>
+					<property name ="y" value="20"/>
+	 	</bean>
+
+					  		<bean id="Point3" class="PointClass">
+						    		            <property name ="x" value="30"/>
+								                   	<property name ="y" value="30"/>
+						 		</bean>
+	
+
+</beans>

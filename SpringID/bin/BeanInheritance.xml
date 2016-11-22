@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"> 
+
+ <bean id="ParentClass" class="PojoBeanInheitance">
+  <property name="x" value="555"/>
+<!-- <property name="y" value="232"/>
+ <property name="x" value="735"/> -->
+ </bean>
+  
+<bean id ="child1" class="PojoBeanInheitance" parent="ParentClass">
+<!-- <property name="x" value="22"/> -->
+<property name="y" value="33"/>
+<property name="z" value="44"/>
+ </bean>
+ 
+ <bean id ="child2" class="PojoBeanInheitance" parent="child1">
+ <property name="z" value="566"/> 
+ 
+ </bean>
+
+ 	
+		
+		
+ 
+</beans>

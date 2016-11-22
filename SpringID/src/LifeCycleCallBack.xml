@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" default-init-method="myInit1" default-destroy-method="cleanup1"> 
+
+
+
+
+  <bean id="firstbean" class="LifeCycleCallBackPpojo" name="firstbeanAlias" autowire="byName" >
+
+ </bean>
+	<bean id="pointClassA" class="PointClass"   >
+				<property name ="x" value="10"/>
+				<property name ="y" value="10"/>
+			</bean>
+		
+		 <bean id="pointClassB" class="PointClass">
+					<property name ="x" value="20"/>
+					<property name ="y" value="20"/>
+	 	</bean>
+
+					  		<bean id="pointClassC" class="PointClass">
+						    		            <property name ="x" value="30"/>
+								                   	<property name ="y" value="30"/>
+						 		</bean>
+
+
+ 
+
+		
+		
+ 
+</beans>
